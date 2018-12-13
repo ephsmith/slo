@@ -7,8 +7,8 @@ After=network.target
 User=ubuntu
 Group=www-data
 WorkingDirectory=/home/ubuntu/flaskapps
-Environment="PATH=/home/ubuntu/flaskapps/env/bin"
-ExecStart=/usr/bin/gunicorn --workers 3 --bind unix:slo.sock -m 007 wsgi:app
+Environment="PATH=/home/ubuntu/flaskapps/bin"
+ExecStart=/home/ubuntu/flaskapps/bin/gunicorn --workers 3 --bind unix:slo.sock -m 007 wsgi:app
 
 [Install]
 WantedBy=multi-user.target

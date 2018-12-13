@@ -11,7 +11,7 @@
 		<div class="col-10">
 		    <h1>SLO Parser</h1>
 		    <p>Paste the output of a SLO test report here</p>
-		    <form action="/" method="post">
+		    <form action="/slo" method="post">
 			<textarea name="pasted" rows="15" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%;">{% if pasted is defined %}{{ pasted }}{% endif %}</textarea><br>
 			<button type="submit" value="display" name="operation">Display</button>
 			<button type="submit" value="csv" name="operation">Download</button>

@@ -28,9 +28,9 @@ def clone(s):
 
 def logical_to_str(b):
     if b:
-        return "1"
-    else:
         return "0"
+    else:
+        return "1"
 
 
 def parse(s):
@@ -45,7 +45,10 @@ def parse(s):
     for row in s.split('\n'):
         r = row.split('\t')
         data_row = [r[0], r[1], r[2]]
-        incorrect = [logical_to_str(slo in r[6]) for slo in slos]
+        if r[5] == "0" and r[6] == "0":
+            incorrect = ["0" for slo in slos]
+        else:
+            incorrect = [logical_to_str(slo in r[6]) for slo in slos]
         data_row.extend(incorrect)
         data.append(data_row)
     return headers, data
