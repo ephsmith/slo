@@ -1,0 +1,14 @@
+#/etc/systemd/system/slo.service
+[Unit]
+Description=Gunicorn instance to serve myproject
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/flaskapps
+Environment="PATH=/home/ubuntu/flaskapps/env/bin"
+ExecStart=/usr/bin/gunicorn --workers 3 --bind unix:slo.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
