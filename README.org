@@ -1,0 +1,8 @@
+* Description
+~slo~ is a simple flask app for parsing the output of the web-based SLO test report.  The app produces a table (or a csv) with user scores for each of the 15 SLO test quesions, along with a summary for each of the 5 SLOs.  This is an admittedly function which is dependent upon the format of the report. The app is published here for documentation purposes and as an example of how simple it is to produce a flask app.
+* Usage
+1. From the *Instructor Menu* in SLO, visit the section *Section List* and select *List* for the course you'd like to view.
+2. Drag-select and copy the table of results (/do not include the table headers/).
+3. Paste the results into the text area.
+4. Click "Display"
+5. If the results are acceptable, click "Download" to download a CSV file for your records.
