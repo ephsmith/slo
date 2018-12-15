@@ -46,7 +46,7 @@ def parse(s):
         r = row.split('\t')
         data_row = [r[0], r[1], r[2]]
         if r[5] == "0" and r[6] == "0":
-            incorrect = ["0" for slo in slos]
+            incorrect = ["" for slo in slos]
         else:
             incorrect = [logical_to_str(slo in r[6]) for slo in slos]
         data_row.extend(incorrect)
