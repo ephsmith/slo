@@ -40,16 +40,21 @@ def parse(s):
                ]
     slos = ['SLO-{}.{}'.format(m, n) for m in range(1, 6) for n in range(1, 4)]
     headers.extend(slos)
+    totals = ['SLO-{}'.format(n) for n in range(1, 6)]
+    headers.extend(totals)
     data = []
 
     for row in s.split('\n'):
         r = row.split('\t')
         data_row = [r[0], r[1], r[2]]
         if r[5] == "0" and r[6] == "0":
-            incorrect = ["" for slo in slos]
+            scores = ["" for slo in slos]
+            total = ["" for t in totals]
         else:
-            incorrect = [logical_to_str(slo in r[6]) for slo in slos]
-        data_row.extend(incorrect)
+            scores = [logical_to_str(slo in r[6]) for slo in slos]
+            total = [int(scores[0 + n * 3]) + int(scores[1 + n * 3]) + int(scores[2 + n * 3]) for n in range(5)]
+        data_row.extend(scores)
+        data_row.extend(total)
         data.append(data_row)
     return headers, data
 
