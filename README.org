@@ -1,5 +1,5 @@
 * Description
-~slo~ is a simple flask app for parsing the output of the web-based SLO test report.  The app produces a table (or a csv) with user scores for each of the 15 SLO test quesions, along with a summary for each of the 5 SLOs.  This is an admittedly function which is dependent upon the format of the report. The app is published here for documentation purposes and as an example of how simple it is to produce a flask app. Visit the [[live demo][https://ephsmith.org/slo]].
+~slo~ is a simple flask app for parsing the output of the web-based SLO test report.  The app produces a table (or a csv) with user scores for each of the 15 SLO test quesions, along with a summary for each of the 5 SLOs.  This is an admittedly function which is dependent upon the format of the report. The app is published here for documentation purposes and as an example of how simple it is to produce a flask app. Visit the [[https://ephsmith.org/slo][live demo]].
 
 * Usage
 1. From the *Instructor Menu* in SLO, visit the section *Section List* and select *List* for the course you'd like to view.
